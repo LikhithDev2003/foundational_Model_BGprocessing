@@ -1,12 +1,11 @@
+
 # Reliable iOS Background Processing Under On-Device Model Constraints
 
 **Design doc — React Native iOS work-item processing pipeline**
 
 ---
 
-## Governing Principle
-
-> Every unit of work must be safely interruptible at any point, and resumable without re-doing completed work or losing in-flight work.
+Every unit of work must be safely interruptible at any point, and resumable without re-doing completed work or losing in-flight work.
 
 ---
 
@@ -14,6 +13,7 @@
 
 ### 1.1 High-Level Flow
 
+<img width="1024" height="1536" alt="architecture" src="https://github.com/user-attachments/assets/5cd9075e-d46b-406d-9065-c1a0948ab51d" />
 
 
 Each arrow in this diagram is a change saved to the local database. If the app gets killed between any two boxes, the item's saved status tells us exactly where it stopped.
@@ -94,7 +94,7 @@ Swift talks to iOS; JS decides what to do. Swift has no business logic about tri
 
 ### 2.1 States
 
-![State machine](./images/state-management.png)
+<img width="1774" height="887" alt="states_flow" src="https://github.com/user-attachments/assets/28c3dee7-7094-419a-8247-ea97944c9baf" />
 
 | State | Meaning |
 |---|---|
